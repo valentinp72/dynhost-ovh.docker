@@ -4,14 +4,13 @@ FROM alpine:latest
 
 # EXTERNAL DEPENDENCIES
 
-RUN apk add --no-cache wget curl \
-    && curl -L https://github.com/sequenceiq/docker-alpine-dig/releases/download/v9.10.2/dig.tgz| tar -xzv -C /usr/local/bin/
+RUN apk add --no-cache curl bind-tools
+# RUN apk add --no-cache wget curl \
+#    && curl -L https://github.com/sequenceiq/docker-alpine-dig/releases/download/v9.10.2/dig.tgz| tar -xzv -C /usr/local/bin/
 
 
 # CUSTOM DIRS
-
 RUN mkdir /data
-
 
 # DYNHOST CONFIG
 
